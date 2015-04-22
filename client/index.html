@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="xstaticApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title>A title</title>
+    <meta name="description" content="some description">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="fragment" content="!">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+
+    <link rel="stylesheet" href="/client/app/app.css">
+
+  </head>
+  <body>
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a ui-sref="home">home</a>
+          </li>
+          <li>
+            <a ui-sref="post">posts</a>
+          </li>
+        </ul>
+      </nav>
+    <div ui-view></div>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- inject:js -->
+    <script src="/client/bower_components/angular/angular.js"></script>
+    <script src="/client/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/client/bower_components/lodash/lodash.js"></script>
+    <script src="/client/app/app.js"></script>
+    <script src="/client/app/templates.js"></script>
+    <script src="/client/services/sockets.js"></script>
+    <script src="/client/app/post/post.controller.js"></script>
+    <script src="/client/app/post/post.js"></script>
+    <script src="/client/app/home/home.controller.js"></script>
+    <script src="/client/app/home/home.js"></script>
+    <!-- endinject -->
+  </body>
+</html>

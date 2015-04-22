@@ -1,0 +1,54 @@
+{
+  "name": "xstatic",
+  "version": "0.0.1",
+  "description": "A static blog generator",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Baloodubronx/xstatic.git"
+  },
+  "author": "Baloodubronx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Baloodubronx/exstatic/issues"
+  },
+  "homepage": "https://github.com/Baloodubronx/exstatic",
+  "dependencies": {
+    "express": "^4.12.3",
+    "socket.io": "^1.3.5"
+  },
+  "jshintConfig": {
+    "latedef": "nofunc",
+    "strict": false,
+    "node": true,
+    "undef": true,
+    "unused": true,
+    "globals": {
+      "angular": false,
+      "jQuery": false,
+      "$": false
+    }
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-angular-templatecache": "^1.6.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-filter": "^2.0.2",
+    "gulp-inject": "^1.2.0",
+    "gulp-jade": "^1.0.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-minify-css": "^1.1.0",
+    "gulp-ng-annotate": "^0.5.2",
+    "gulp-nodemon": "^2.0.2",
+    "gulp-rev": "^3.0.1",
+    "gulp-rimraf": "^0.1.1",
+    "gulp-stylus": "^2.0.1",
+    "gulp-uglify": "^1.2.0",
+    "gulp-watch": "^4.2.4",
+    "jeet": "^6.1.2",
+    "main-bower-files": "^2.7.0",
+    "run-sequence": "^1.0.2",
+    "rupture": "^0.6.1",
+    "streamqueue": "^0.1.3"
+  }
+}
