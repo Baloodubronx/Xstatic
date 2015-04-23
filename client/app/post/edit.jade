@@ -1,11 +1,32 @@
-.main(ng-init="onload()")
+.main-content(ng-init="onload()")
+  .sidebar
+    .sidebar-content
+      div#tagzone
+        p(ng-repeat="tag in post.terms.post_tag")
+          | {{tag.name}}
+      input#newtag(placeholder='type a tag')
+      p
+        a(href="/generate")
+          | generate file
+      p
+        a(target = "_blank")
+          | preview
+      p
+        a#savebutton(href="#")
+          | save post
+      p
+        a#makeslug(href="#")
+          | make slug
+      p
+        | Created {{post.date | date:"dd/MM/yy - HH:mm"}}
+      p
+        | Modified {{post.modified | date:"dd/MM/yy - HH:mm"}}
+        
   .editzone
     .infozone
       input#posttitleinput(name='title', ng-model="post.title")
       input#postslug(name='slug', ng-model="post.slug")
       | .html
-      div.code-editor(ui-codemirror="{ lineWrapping : true, mode: 'markdown' }", ng-model="post.content")
       
     .editzone-content
-      button(type="submit")
-        | save
+      div.code-editor(ui-codemirror="{ lineWrapping : true, mode: 'markdown' }", ng-model="post.content")
