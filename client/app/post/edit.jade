@@ -1,0 +1,11 @@
+.main(ng-init="onload()")
+  .editzone
+    .infozone
+      input#posttitleinput(name='title', ng-model="post.title")
+      input#postslug(name='slug', ng-model="post.slug")
+      | .html
+      div.code-editor(ui-codemirror="{ lineWrapping : true, mode: 'markdown' }", ng-model="post.content")
+      
+    .editzone-content
+      button(type="submit")
+        | save

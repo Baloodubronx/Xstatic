@@ -2,7 +2,8 @@
 
 angular
   .module('xstaticApp', [
-    'ui.router'
+    'ui.router',
+    'ui.codemirror'
   ])
 
   .config(function ( $locationProvider, $urlRouterProvider ) {
