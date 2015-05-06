@@ -1,10 +1,43 @@
 .main-content(ng-init="onload()")
+  header
+    section.box.entry-title
+      input#posttitleinput(name='title', ng-model="post.title", tabindex="1", type="text")
+  .md-editor
+    .md-editor-content
+      div.code-editor(ui-codemirror="{ lineWrapping : true, mode: 'markdown' }", ng-model="post.content")
   .sidebar
     .sidebar-content
+      input(ng-model="post.slug")
+      | .html
+      button(ng-click="getSlug()")
+        span.ion-refresh
       div#tagzone
-        p(ng-repeat="tag in post.terms.post_tag")
-          | {{tag.name}}
-      input#newtag(placeholder='type a tag')
+        span.ion-pricetags
+        span(ng-hide="post.terms.tag")
+          | No tag yet
+        span(ng-repeat="tag in post.terms.tag")
+          | {{tag}}, 
+        br
+        select(ng-model="currentTag")
+          option(ng-repeat='tag in catsAndTags.tags', value='{{tag.name}}')
+            | {{tag.name}}
+        button(ng-click='addTag()')
+          | add tag
+        
+        br
+        br
+        span.ion-category
+        span(ng-hide="post.terms.category")
+          | No category yet
+        span(ng-repeat="cat in post.terms.category")
+          | {{cat}}
+        br
+        select(ng-model="currentCat")
+          option(ng-repeat='cat in catsAndTags.cats', value='{{cat.name}}')
+            | {{cat.name}}
+        button(ng-click="addCat()")
+          | add category
+          
       p
         a(href="/generate")
           | generate file
@@ -12,7 +45,7 @@
         a(target = "_blank")
           | preview
       p
-        a#savebutton(href="#")
+        a#savebutton(href="", ng-click="savePost()")
           | save post
       p
         a#makeslug(href="#")
@@ -22,11 +55,7 @@
       p
         | Modified {{post.modified | date:"dd/MM/yy - HH:mm"}}
         
-  .editzone
-    .infozone
-      input#posttitleinput(name='title', ng-model="post.title")
-      input#postslug(name='slug', ng-model="post.slug")
-      | .html
-      
-    .editzone-content
-      div.code-editor(ui-codemirror="{ lineWrapping : true, mode: 'markdown' }", ng-model="post.content")
+      //input#postslug(name='slug', ng-model="post.slug")
+      //| .html
+.footer
+  | {{modified ? 'modified - ' : ''}}{{status}}

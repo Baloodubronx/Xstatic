@@ -13,22 +13,33 @@
 
     <!-- inject:css -->
     <link rel="stylesheet" href="/client/bower_components/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="/client/bower_components/ionicons/css/ionicons.css">
     <!-- endinject -->
     <link rel="stylesheet" href="/client/app/app.css">
 
   </head>
   <body>
+    <div id="container">
+      <!-- NAVIGATION BAR -->
       <nav class="navbar">
         <ul>
-          <li>
-            <a ui-sref="home">home</a>
-          </li>
-          <li>
-            <a ui-sref="post.list">posts</a>
-          </li>
+          <!--<li><a ui-sref="home"><span class="ion-home"></span> home</a></li>-->
+          <li><a ui-sref="post.list"><span class="ion-edit"></span> posts</a></li>
+          <li><a ui-sref="post.new"><span class="ion-plus"></span>new post</a></li>
+          <li><a ui-sref="cats"><span class="ion-pricetags"></span> categories & tags</a></li>
+          <li><a ui-sref="media"><span class="ion-images"></span> media</a></li>
+          <li><a ui-sref="settings"><span class="ion-settings"></span> settings</a></li>
+          <li><a ui-sref="generate"><span class="ion-ios-bolt"></span> generate site</a></li>
+          <li><a href="/" target="_blank"><span class="ion-eye"></span> view site</a></li>
         </ul>
       </nav>
+
+      <!-- MAIN CONTENT -->
       <div class="main" ui-view></div>
+    </div>
+
+
+
     <script src="/socket.io/socket.io.js"></script>
     <!-- inject:js -->
     <script src="/client/bower_components/angular/angular.js"></script>
@@ -39,9 +50,14 @@
     <script src="/client/app/app.js"></script>
     <script src="/client/app/templates.js"></script>
     <script src="/client/services/sockets.js"></script>
+    <script src="/client/services/ext/codemirror.js"></script>
     <script src="/client/services/ext/markdown-editor.js"></script>
+    <script src="/client/app/cats/cats.controller.js"></script>
+    <script src="/client/app/cats/cats.js"></script>
     <script src="/client/app/home/home.controller.js"></script>
     <script src="/client/app/home/home.js"></script>
+    <script src="/client/app/media/media.controller.js"></script>
+    <script src="/client/app/media/media.js"></script>
     <script src="/client/app/post/post.controller.js"></script>
     <script src="/client/app/post/post.js"></script>
     <!-- endinject -->

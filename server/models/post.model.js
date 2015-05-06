@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 
-// define the schema for our user model
+
 var postSchema = mongoose.Schema({
   ID : {type : Number, default : 0},
   title : String,
@@ -21,16 +21,8 @@ var postSchema = mongoose.Schema({
     ID: Number
   },
   terms : {
-    post_tag : [{
-      name : String,
-      slug : String,
-      description : String
-    }],
-    category : [{
-      name : String,
-      slug : String,
-      description : String
-    }]
+    tag : [String],
+    category : [ String ]
   }
 });
 

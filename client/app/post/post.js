@@ -17,5 +17,10 @@ angular.module('xstaticApp')
         url: '/:slug',
         templateUrl : 'app/post/edit.html',
         controller : 'PostEditCtrl'
+      })
+      .state('post.new', {
+        url : '/new',
+        templateUrl : 'app/post/edit.html',
+        controller : 'PostEditCtrl'
       });
   });

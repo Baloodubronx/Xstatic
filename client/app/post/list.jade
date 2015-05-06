@@ -1,5 +1,8 @@
-.main(ng-init="onload()")
-  | hello
+.main-content(ng-init="onload()")
+  button(ui-sref='post.new')
+    | NEW POST
+  h3
+    | Posts list:
   div(ng-repeat="post in posts")
     p
       a(ui-sref="post.edit({slug:post.slug})")

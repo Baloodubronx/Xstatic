@@ -1,0 +1,31 @@
+.main-content(ng-init="onload()")
+  select(ng-model="thing.type", ng-init="thing.type = 1")
+    option(value="1") tag
+    option(value="2") category
+  label name:
+    input(ng-model="thing.name")
+  label slug (
+    button(ng-click="generateSlug()") generate
+    ):
+    input(ng-model="thing.slug")
+  label description:
+    input(ng-model="thing.description")
+  button(ng-click="addOne()")
+    | add
+  
+  h4 Categories
+  p(ng-repeat="cat in catsAndTags.cats")
+    | {{cat.name}} (
+    a(ng-href="/{{cat.slug}}")
+      | /{{cat.slug}}
+    | ) - {{cat.description}}
+    button(ng-click="removeCat(cat.name)")
+      span.ion-trash-a
+  h4 Tags
+  p(ng-repeat="tag in catsAndTags.tags")
+    | {{tag.name}} (
+    a(ng-href="/tag/{{tag.slug}}")
+      | /tag/{{tag.slug}}
+    | ) - {{tag.description}}
+    button(ng-click="removeTag(tag.name)")
+      span.ion-trash-a

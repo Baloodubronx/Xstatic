@@ -1,0 +1,24 @@
+.main-content(ng-init="load()")
+  .media-input-container
+    input(type="file", ng-model-instant, onchange="angular.element(this).scope().setFile(this)")
+  .media-metas-container
+    label
+      | file name:
+      input(ng-model="media.slug")
+    label
+      | title:
+      input(ng-model="media.title")
+    label
+      | description
+      input(ng-model="media.desc")
+  img.media-preview(src="{{imgsrc}}")
+  button(ng-click="sendFile()")
+    | upload file
+  //p
+    //| {{onefile}}
+
+  div(ng-repeat='onemed in mediaList')
+    p
+      | {{onemed.title}}
+    a(ng-href="{{onemed.path+onemed.filename}}", target='_blank')
+      img(ng-src="{{onemed.path+onemed.filename}}", style="height:100px")
